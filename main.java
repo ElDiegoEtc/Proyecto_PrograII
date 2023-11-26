@@ -3,17 +3,14 @@ public class main {
 
         Conector simpleConector = new SimpleConector();
 
-        Conector inheritanceConector = new SerieDireccionDecorator(new HerenciaConectorDecorator(simpleConector), 1, 3);
-        inheritanceConector.draw();
+        Conector herenciaConector1 = new SerieDireccionDecorator(new HerenciaConectorDecorator(simpleConector), 1, 3);
+        herenciaConector1.draw();
 
-        Conector associationConector = new SerieDireccionDecorator(new AsociationConectorDecorator(simpleConector), 2, 1);
-        associationConector.draw();
+        Conector conectorasociacion1 = new SerieDireccionDecorator(new AsociationConectorDecorator(simpleConector), 2, 1);
+        conectorasociacion1.draw();
 
-        Conector aggregationConector = new SerieDireccionDecorator(new AgregationConectorDecorator(simpleConector), 3, 2);
-        aggregationConector.draw();
-
-        Conector compositionConector = new SerieDireccionDecorator(new ComposicionConectorDecorator(simpleConector), 4, 1);
-        compositionConector.draw();
+        Conector conectoragregacion1 = new SerieDireccionDecorator(new AgregationConectorDecorator(simpleConector), 3, 2);
+        conectoragregacion1.draw();
 
 
     }
