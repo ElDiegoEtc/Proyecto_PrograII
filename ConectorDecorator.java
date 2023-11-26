@@ -1,12 +1,14 @@
-public abstract class ConectorDecorator extends Conector {
-    protected Conector conectorDecorado;
+import javax.swing.*;
+import java.awt.*;
+public abstract class ConectorDecorator implements Conector {
+    protected Conector decoratedConector;
 
-    public ConectorDecorator(Conector conectorDecorado) {
-        this.conectorDecorado = conectorDecorado;
+    public ConectorDecorator(Conector decoratedConector) {
+        this.decoratedConector = decoratedConector;
     }
-    @Override
-    public void getFlecha() {
-        conectorDecorado.getFlecha();
 
+    @Override
+    public void draw() {
+        decoratedConector.draw();
     }
 }

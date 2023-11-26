@@ -1,10 +1,6 @@
-public abstract class Conector {
-    int direccionFelcha;
 
-    public void setDireccionFelcha(int direccionFelcha) {
-        this.direccionFelcha = direccionFelcha;
-    }
-    public abstract void getFlecha();
-
-
+import javax.swing.*;
+import java.awt.*;
+interface Conector {
+    void draw();
 }
