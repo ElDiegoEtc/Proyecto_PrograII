@@ -1,3 +1,8 @@
+package logica.command;
+
+import logica.ArchivoPizarra;
+import logica.command.Command;
+
 public class CommandGuardarArchivoPizarra implements Command {
 
     ArchivoPizarra ar;

@@ -1,3 +1,5 @@
+package logica;
+
 public class Clase {
     private int Titulo;
     private String Metodo;

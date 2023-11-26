@@ -1,3 +1,7 @@
+package logica;
+
+import logica.command.Command;
+
 public class Pizarra {
     private Command boton1, boton2, boton3, boton4, boton5;
 

@@ -1,3 +1,4 @@
+package logica;
 
 import javax.swing.*;
 import java.awt.*;

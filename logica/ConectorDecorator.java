@@ -1,5 +1,7 @@
-import javax.swing.*;
-import java.awt.*;
+package logica;
+
+import logica.Conector;
+
 public abstract class ConectorDecorator implements Conector {
     protected Conector decoratedConector;
 

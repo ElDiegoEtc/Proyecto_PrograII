@@ -1,3 +1,8 @@
+package logica.command;
+
+import logica.ElementosPizarra;
+import logica.command.Command;
+
 public class CommandAddElementElementosPizarra implements Command {
 
     ElementosPizarra ep;

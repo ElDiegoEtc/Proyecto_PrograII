@@ -1,5 +1,7 @@
-import javax.swing.*;
-import java.awt.*;
+package logica;
+
+import logica.Conector;
+
 public class SimpleConector implements Conector {
     @Override
     public void draw() {

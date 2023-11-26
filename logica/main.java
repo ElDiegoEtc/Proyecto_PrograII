@@ -1,3 +1,10 @@
+package logica;
+
+import logica.AgregationConectorDecorator;
+import logica.AsociationConectorDecorator;
+import logica.Conector;
+import logica.HerenciaConectorDecorator;
+
 public class main {
     public static void main(String[] args) {
 

@@ -1,3 +1,8 @@
+package logica.command;
+
+import logica.ElementosPizarra;
+import logica.command.Command;
+
 public class CommandDeleteAllElementosPizarra implements Command {
 
     ElementosPizarra ep;

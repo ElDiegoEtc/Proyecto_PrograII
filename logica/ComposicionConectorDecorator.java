@@ -1,3 +1,5 @@
+package logica;
+
 public class ComposicionConectorDecorator extends ConectorDecorator {
     public ComposicionConectorDecorator(Conector decoratedConector) {
         super(decoratedConector);

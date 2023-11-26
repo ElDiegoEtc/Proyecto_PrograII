@@ -1,3 +1,8 @@
+package logica;
+
+import logica.Conector;
+import logica.ConectorDecorator;
+
 public class SerieDireccionDecorator extends ConectorDecorator {
     private int serieNumber;
     private int direction;

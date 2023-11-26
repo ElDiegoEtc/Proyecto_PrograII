@@ -1,3 +1,7 @@
+package logica.command;
+
+import logica.*;
+
 public class CommandConfiguracion {
 
     public static void CommandConfiguracion(Pizarra p) {

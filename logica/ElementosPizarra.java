@@ -1,3 +1,5 @@
+package logica;
+
 public class ElementosPizarra {
     public void AddElement(){
 

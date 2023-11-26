@@ -1,5 +1,8 @@
-import javax.swing.*;
-import java.awt.*;
+package logica;
+
+import logica.Conector;
+import logica.ConectorDecorator;
+
 public class HerenciaConectorDecorator extends ConectorDecorator {
     public HerenciaConectorDecorator(Conector decoratedConector) {
         super(decoratedConector);
