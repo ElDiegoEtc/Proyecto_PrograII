@@ -6,6 +6,6 @@ public class AgregationConectorDecorator extends ConectorDecorator {
     @Override
     public void draw() {
         super.draw();
-        System.out.println("Añadiendo punta amarilla de agregación");
+        System.out.println("Añadiendo punta  de agregación(rombo vacio)");
     }
 }

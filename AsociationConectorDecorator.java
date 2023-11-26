@@ -6,6 +6,6 @@ public class AsociationConectorDecorator extends ConectorDecorator {
     @Override
     public void draw() {
         super.draw();
-        System.out.println("Añadiendo punta verde de asociación");
+        System.out.println("Añadiendo punta  de asociación(punta abierta)");
     }
 }

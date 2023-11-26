@@ -8,6 +8,6 @@ public class HerenciaConectorDecorator extends ConectorDecorator {
     @Override
     public void draw() {
         super.draw();
-        System.out.println("Añadiendo punta roja de herencia");
+        System.out.println("Añadiendo punta de herencia(triengulo vacio) ");
     }
 }

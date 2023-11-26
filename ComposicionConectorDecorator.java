@@ -6,6 +6,6 @@ public class ComposicionConectorDecorator extends ConectorDecorator {
     @Override
     public void draw() {
         super.draw();
-        System.out.println("Añadiendo punta morada de composición");
+        System.out.println("Añadiendo punta de composición(rombo relleno)");
     }
 }
