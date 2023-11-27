@@ -5,7 +5,7 @@ import logica.command.Command;
 
 public class CommandDeleteElementElementosPizarra implements Command {
 
-    ElementosPizarra ep;
+    public ElementosPizarra ep;
 
     public CommandDeleteElementElementosPizarra(ElementosPizarra ep){
         this.ep = ep;

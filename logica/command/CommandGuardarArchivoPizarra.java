@@ -5,7 +5,7 @@ import logica.command.Command;
 
 public class CommandGuardarArchivoPizarra implements Command {
 
-    ArchivoPizarra ar;
+    public ArchivoPizarra ar;
 
     public CommandGuardarArchivoPizarra(ArchivoPizarra ar){
         this.ar = ar;
