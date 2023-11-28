@@ -1,13 +1,13 @@
 package logica;
 
 public class AsociationConectorDecorator extends ConectorDecorator {
-    public AsociationConectorDecorator(Conector decoratedConector) {
-        super(decoratedConector);
+    public AsociationConectorDecorator(Conector decoratedArrow) {
+        super(decoratedArrow);
     }
 
     @Override
     public void draw() {
         super.draw();
-        System.out.println("Añadiendo punta  de asociación(punta abierta)");
+        System.out.println("Añadiendo rombo de Agregacion");
     }
 }

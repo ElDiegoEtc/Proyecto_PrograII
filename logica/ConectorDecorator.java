@@ -1,16 +1,20 @@
 package logica;
 
-import logica.Conector;
-
 public abstract class ConectorDecorator implements Conector {
-    protected Conector decoratedConector;
+    protected Conector decoratedArrow;
 
-    public ConectorDecorator(Conector decoratedConector) {
-        this.decoratedConector = decoratedConector;
+    public ConectorDecorator(Conector decoratedArrow) {
+        this.decoratedArrow = decoratedArrow;
     }
 
     @Override
     public void draw() {
-        decoratedConector.draw();
+        decoratedArrow.draw();
+    }
+
+    @Override
+    public void setSerialNumber(int serialNumber) {
+        decoratedArrow.setSerialNumber(serialNumber);
     }
 }
+
