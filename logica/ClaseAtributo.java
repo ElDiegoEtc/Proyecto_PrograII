@@ -1,12 +1,14 @@
 package logica;
 
-import logica.Clase;
-
-public class ClaseAtributo extends Clase {
-    public ClaseAtributo(){
-        super();
+public class ClaseAtributo extends Clasefactory {
+    private String atributo;
+    public ClaseAtributo(String titulo, String atributo){
+        super(titulo);
+        this.atributo = atributo;
     }
-    public void modulo(){
 
+    @Override
+    public String[] modulo(){
+        return new String[]{titulo, atributo};
     }
 }

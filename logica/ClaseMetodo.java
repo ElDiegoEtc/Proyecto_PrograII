@@ -1,12 +1,14 @@
 package logica;
 
-import logica.Clase;
+public class ClaseMetodo extends Clasefactory {
 
-public class ClaseMetodo extends Clase {
-    public ClaseMetodo(){
-        super();
+    private String metodo;
+    public ClaseMetodo(String titulo, String metodo){
+        super(titulo);
+        this.metodo = metodo;
     }
-    public void modulo(){
-
+    @Override
+    public String[] modulo(){
+        return new String[]{titulo, metodo};
     }
 }

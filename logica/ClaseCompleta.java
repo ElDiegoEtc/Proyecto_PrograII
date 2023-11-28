@@ -1,12 +1,17 @@
 package logica;
 
-import logica.Clase;
+public class ClaseCompleta extends Clasefactory {
+    private String atributo;
+    private String metodo;
 
-public class ClaseCompleta extends Clase {
-    public ClaseCompleta(){
-        super();
+    public ClaseCompleta(String titulo, String atributo, String metodo){
+        super(titulo);
+        this.atributo = atributo;
+        this.metodo = metodo;
     }
-    public void modulo(){
 
+    @Override
+    public String[] modulo(){
+        return new String[]{titulo, atributo, metodo};
     }
 }
