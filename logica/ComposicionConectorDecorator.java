@@ -1,6 +1,10 @@
 package logica;
 
 public class ComposicionConectorDecorator extends ConectorDecorator {
+    /**
+     *
+     * @param decoratedArrow
+     */
     public ComposicionConectorDecorator(Conector decoratedArrow) {
         super(decoratedArrow);
     }
