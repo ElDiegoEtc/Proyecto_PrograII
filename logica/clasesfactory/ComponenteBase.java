@@ -1,6 +1,6 @@
 package logica.clasesfactory;
 
-public class ComponenteBase implements Component {
+public class ComponenteBase implements Clase {
     private String titulo;
 
     public ComponenteBase(String titulo) {

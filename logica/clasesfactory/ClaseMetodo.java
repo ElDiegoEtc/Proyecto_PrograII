@@ -3,8 +3,8 @@ package logica.clasesfactory;
 public class ClaseMetodo extends Decorador {
 
     private String metodo;
-    public ClaseMetodo(Component componente, String metodo){
-        super(componente);
+    public ClaseMetodo(Clase clase, String metodo){
+        super(clase);
         this.metodo = metodo;
     }
     @Override

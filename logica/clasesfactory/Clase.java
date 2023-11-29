@@ -1,5 +1,5 @@
 package logica.clasesfactory;
 
-public interface Component {
+public interface Clase {
     String[] modulo();
 }

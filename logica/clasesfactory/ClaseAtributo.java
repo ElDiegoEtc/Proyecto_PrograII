@@ -2,8 +2,8 @@ package logica.clasesfactory;
 
 public class ClaseAtributo extends Decorador {
     private String atributo;
-    public ClaseAtributo(Component componente, String atributo){
-        super(componente);
+    public ClaseAtributo(Clase clase, String atributo){
+        super(clase);
         this.atributo = atributo;
     }
 

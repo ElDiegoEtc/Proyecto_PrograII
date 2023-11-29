@@ -1,10 +1,36 @@
 package logica;
-
+import logica.clasesfactory.Clase;
 import logica.command.Command;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Pizarra {
+public class Pizarra implements Serializable {
     private Command boton1, boton2, boton3, boton4, boton5;
+    private ArrayList<Conector> conectores;
+    private ArrayList<Clase> clases;
 
+
+    public void listaconectores(){
+        conectores = new ArrayList<>();
+    }
+    public void listaclases(){
+        clases = new ArrayList<>();
+    }
+
+    public void addConector(Conector conector) {
+        conectores.add(conector);
+    }
+    public ArrayList<Conector> getArrayconectores() {
+        return conectores;
+    }
+
+
+    public void addClases(Clase clase) {
+        clases.add(clase);
+    }
+    public ArrayList<Clase> getArrayclases() {
+        return clases;
+    }
 
 
     public void clickBoton1() {
@@ -25,6 +51,8 @@ public class Pizarra {
     public void clickBoton5() {
         boton5.execute();
     }
+
+
 
 
 
