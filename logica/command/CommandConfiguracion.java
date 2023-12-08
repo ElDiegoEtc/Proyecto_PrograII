@@ -15,7 +15,7 @@ public class CommandConfiguracion implements Serializable {
 
         p.setBoton3(new CommandAddElementElementosPizarra(ep));
         p.setBoton4(new CommandDeleteElementElementosPizarra(ep));
-        p.setBoton5(new CommandDeleteAllElementosPizarra(ep));
+        p.setBoton5(new CommandDeleteAllElementosPizarra(ep, p));
 
     }
 }
