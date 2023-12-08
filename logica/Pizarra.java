@@ -9,6 +9,17 @@ public class Pizarra implements Serializable {
     private ArrayList<Conector> conectores;
     private ArrayList<Clase> clases;
 
+    public Pizarra(ArrayList<Conector> conectores, ArrayList<Clase> clases, Command boton1,
+                   Command boton2,Command boton3, Command boton4, Command boton5 ){
+        this.conectores = conectores;
+        this.clases = clases;
+        this.boton1 = boton1;
+        this.boton2 = boton2;
+        this.boton3 = boton3;
+        this.boton4 = boton4;
+        this.boton5 = boton5;
+    }
+
 
     public void listaconectores(){
         conectores = new ArrayList<>();
@@ -17,20 +28,22 @@ public class Pizarra implements Serializable {
         clases = new ArrayList<>();
     }
 
+
+
     public void addConector(Conector conector) {
         conectores.add(conector);
     }
     public ArrayList<Conector> getArrayconectores() {
         return conectores;
     }
-
-
     public void addClases(Clase clase) {
         clases.add(clase);
     }
     public ArrayList<Clase> getArrayclases() {
         return clases;
     }
+
+
 
 
     public void clickBoton1() {
@@ -51,9 +64,6 @@ public class Pizarra implements Serializable {
     public void clickBoton5() {
         boton5.execute();
     }
-
-
-
 
 
 
