@@ -10,8 +10,8 @@ public class CommandConfiguracion implements Serializable {
         ArchivoPizarra ar = new ArchivoPizarra();
         ElementosPizarra ep = new ElementosPizarra();
 
-        p.setBoton1(new CommandGuardarArchivoPizarra(ar, p, "Hola"));
-        p.setBoton2(new CommandCargarArchivoPizarra(ar));
+        p.setBoton1(new CommandGuardarArchivoPizarra(ar, p));
+        p.setBoton2(new CommandCargarArchivoPizarra(ar, p));
 
         p.setBoton3(new CommandAddElementElementosPizarra(ep));
         p.setBoton4(new CommandDeleteElementElementosPizarra(ep));

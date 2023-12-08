@@ -8,42 +8,63 @@ public class Pizarra implements Serializable {
     private Command boton1, boton2, boton3, boton4, boton5;
     private ArrayList<Conector> conectores;
     private ArrayList<Clase> clases;
+    private String nombre;
 
     public Pizarra(ArrayList<Conector> conectores, ArrayList<Clase> clases){
         this.conectores = conectores;
         this.clases = clases;
     }
 
-
-    public void listaconectores(){
-        conectores = new ArrayList<>();
+    /**
+     * @return: retorna el nombre de la pizarra
+     */
+    public String getNombre() {
+        return nombre;
     }
-    public void listaclases(){
-        clases = new ArrayList<>();
+
+    /**
+     * @param nombre: Almacena un string que correspondera al nombre de la pizarra
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-
-
+    /** Funcion para añadir objetos conectores a la pizarra
+     * @param conector: Objeto para conectar clases en pizarra UML
+     */
     public void addConector(Conector conector) {
         conectores.add(conector);
     }
+
+    /**
+     * @return retorna todos los objetos "conectores" que estan en la pizarra UML
+     */
     public ArrayList<Conector> getArrayconectores() {
         return conectores;
     }
+
+    /**
+     * @param clase: Son los objetos "clase" de la pizarra UML
+     */
     public void addClases(Clase clase) {
         clases.add(clase);
     }
+
+    /**
+     * @return: retorna todos los objetos "clase" que estan en la pizarra UML
+     */
     public ArrayList<Clase> getArrayclases() {
         return clases;
     }
 
-
-
-
+    /** Ejecuta el boton1 (command pattern), que es el encargado de guardar el archivo pizarra
+     */
     public void clickBoton1() {
         boton1.execute();
     }
 
+    /** Ejecuta el boton2 (command pattern), que es el encargado de cargar el archivo pizarra
+     */
     public void clickBoton2() {
         boton2.execute();
     }
