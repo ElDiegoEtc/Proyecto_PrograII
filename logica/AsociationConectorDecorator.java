@@ -8,6 +8,8 @@ public class AsociationConectorDecorator extends ConectorDecorator {
     @Override
     public void draw() {
         super.draw();
-        System.out.println("Añadiendo rombo de Agregacion");
+        setRelleno(true);
+        setTipoPunta(true);
+        System.out.println("Añadiendo rombo o punta triangular de Agregación");
     }
 }

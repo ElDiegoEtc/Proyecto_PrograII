@@ -8,6 +8,6 @@ public class AgregationConectorDecorator extends ConectorDecorator {
     @Override
     public void draw() {
         super.draw();
-    System.out.println("Añadiendo punta triangular sin relleno de agregación");
+        System.out.println("Añadiendo punta triangular o rombo de agregación");
     }
 }
