@@ -2,13 +2,15 @@ package logica.command;
 
 import logica.*;
 
-public class CommandConfiguracion {
+import java.io.Serializable;
+
+public class CommandConfiguracion implements Serializable {
 
     public static void CommandConfiguracion(Pizarra p) {
         ArchivoPizarra ar = new ArchivoPizarra();
         ElementosPizarra ep = new ElementosPizarra();
 
-        p.setBoton1(new CommandGuardarArchivoPizarra(ar));
+        p.setBoton1(new CommandGuardarArchivoPizarra(ar, p, "Hola"));
         p.setBoton2(new CommandCargarArchivoPizarra(ar));
 
         p.setBoton3(new CommandAddElementElementosPizarra(ep));

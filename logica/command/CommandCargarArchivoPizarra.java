@@ -3,7 +3,9 @@ package logica.command;
 import logica.ArchivoPizarra;
 import logica.command.Command;
 
-public class CommandCargarArchivoPizarra implements Command {
+import java.io.Serializable;
+
+public class CommandCargarArchivoPizarra implements Command, Serializable {
 
     public ArchivoPizarra ar;
 

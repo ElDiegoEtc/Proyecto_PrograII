@@ -3,7 +3,9 @@ package logica.command;
 import logica.ElementosPizarra;
 import logica.command.Command;
 
-public class CommandAddElementElementosPizarra implements Command {
+import java.io.Serializable;
+
+public class CommandAddElementElementosPizarra implements Command, Serializable {
 
     public ElementosPizarra ep;
 

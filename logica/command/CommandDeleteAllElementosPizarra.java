@@ -3,7 +3,9 @@ package logica.command;
 import logica.ElementosPizarra;
 import logica.command.Command;
 
-public class CommandDeleteAllElementosPizarra implements Command {
+import java.io.Serializable;
+
+public class CommandDeleteAllElementosPizarra implements Command, Serializable {
 
     public ElementosPizarra ep;
 

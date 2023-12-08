@@ -1,14 +1,12 @@
 package logica;
-import java.util.List;
+import java.io.Serializable;
 import java.util.ArrayList;
-import logica.AgregationConectorDecorator;
-import logica.AsociationConectorDecorator;
-import logica.Conector;
-import logica.HerenciaConectorDecorator;
+import logica.command.CommandConfiguracion;
+import logica.command.CommandGuardarArchivoPizarra;
 
-public class main {
+public class main implements Serializable {
     public static void main(String[] args) {
-        ArrayList<Conector> arrows = new ArrayList<>();
+        /*ArrayList<Conector> arrows = new ArrayList<>();
 
 
         Conector flecha1 = new SimpleConector(10, 20, Flecha.INHERITANCE, 3,3,20);
@@ -22,8 +20,10 @@ public class main {
 
         for (Conector arrow : arrows) {
             arrow.draw();
-        }
+        }*/
 
-
+        Pizarra pizarra = new Pizarra(new ArrayList<>(), new ArrayList<>());
+        CommandConfiguracion.CommandConfiguracion(pizarra);
+        pizarra.clickBoton1();
     }
 }

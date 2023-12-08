@@ -1,4 +1,4 @@
-package logica.clasesfactory;
+package logica.clasesdecorator;
 
 public class ClaseMetodo extends Decorador {
 

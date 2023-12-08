@@ -1,6 +1,8 @@
-package logica.clasesfactory;
+package logica.clasesdecorator;
 
-public class ComponenteBase implements Clase {
+import java.io.Serializable;
+
+public class ComponenteBase implements Clase, Serializable {
     private String titulo;
 
     public ComponenteBase(String titulo) {

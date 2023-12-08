@@ -1,6 +1,9 @@
-package logica.clasesfactory;
+package logica.clasesdecorator;
 
-public abstract class Decorador implements Clase {
+import java.io.Serializable;
+
+public abstract class Decorador implements Clase, Serializable {
+
     public Clase component;
 
     public Decorador(Clase component){

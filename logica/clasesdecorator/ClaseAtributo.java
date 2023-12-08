@@ -1,12 +1,19 @@
-package logica.clasesfactory;
+package logica.clasesdecorator;
 
-public class ClaseAtributo extends Decorador {
+import java.io.Serializable;
+
+public class ClaseAtributo extends Decorador implements Serializable {
+
     private String atributo;
     public ClaseAtributo(Clase clase, String atributo){
         super(clase);
         this.atributo = atributo;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String[] modulo(){
         String[] moduloBase = super.modulo();

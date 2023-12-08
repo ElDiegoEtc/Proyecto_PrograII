@@ -1,5 +1,5 @@
 package logica;
-import logica.clasesfactory.Clase;
+import logica.clasesdecorator.Clase;
 import logica.command.Command;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,15 +9,9 @@ public class Pizarra implements Serializable {
     private ArrayList<Conector> conectores;
     private ArrayList<Clase> clases;
 
-    public Pizarra(ArrayList<Conector> conectores, ArrayList<Clase> clases, Command boton1,
-                   Command boton2,Command boton3, Command boton4, Command boton5 ){
+    public Pizarra(ArrayList<Conector> conectores, ArrayList<Clase> clases){
         this.conectores = conectores;
         this.clases = clases;
-        this.boton1 = boton1;
-        this.boton2 = boton2;
-        this.boton3 = boton3;
-        this.boton4 = boton4;
-        this.boton5 = boton5;
     }
 
 
@@ -70,8 +64,7 @@ public class Pizarra implements Serializable {
 
 
 
-
-
+    //Boton 1: GUARDA PIZARRA
     public Command getBoton1() {
         return boton1;
     }
@@ -79,6 +72,7 @@ public class Pizarra implements Serializable {
     public void setBoton1(Command boton1) {
         this.boton1 = boton1;
     }
+
 
     public Command getBoton2() {
         return boton2;
