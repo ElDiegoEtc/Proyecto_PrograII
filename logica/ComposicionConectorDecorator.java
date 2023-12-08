@@ -1,10 +1,6 @@
 package logica;
 
 public class ComposicionConectorDecorator extends ConectorDecorator {
-    /**
-     *
-     * @param decoratedArrow
-     */
     public ComposicionConectorDecorator(Conector decoratedArrow) {
         super(decoratedArrow);
     }
@@ -12,6 +8,8 @@ public class ComposicionConectorDecorator extends ConectorDecorator {
     @Override
     public void draw() {
         super.draw();
-        System.out.println("Añadiendo rombo de composición");
+        setRelleno(true);
+        setTipoPunta(false);
+        System.out.println("Añadiendo rombo o punta triangular de composición");
     }
 }
