@@ -1,6 +1,8 @@
 package logica;
 
-public class ElementosPizarra {
+import java.io.Serializable;
+
+public class ElementosPizarra implements Serializable {
     public void AddElement(){
 
     }
