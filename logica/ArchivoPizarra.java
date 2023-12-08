@@ -9,7 +9,7 @@ public class ArchivoPizarra implements Serializable {
      * @param pizarra: se crea una pizarra en blanco con el nombre de la pizarra a cargar, luego se carga
      * @return: retorna la pizarra cargada
      */
-    public Pizarra cargar(Pizarra pizarra) {
+    public void cargar(Pizarra pizarra) {
         String nombreArchivo = pizarra.getNombre();
         pizarra = null;
         try (FileInputStream fileIn = new FileInputStream(nombreArchivo);
@@ -18,7 +18,6 @@ public class ArchivoPizarra implements Serializable {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return pizarra;
     }
 
     /** guardar: Funcion que guarda los atributos de la pizarra como un archivo con el nombre de esta,

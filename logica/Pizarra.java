@@ -15,6 +15,13 @@ public class Pizarra implements Serializable {
         this.clases = clases;
     }
 
+    public void listaconectores(){
+        conectores = new ArrayList<>();
+    }
+    public void listaclases(){
+        clases = new ArrayList<>();
+    }
+
     /**
      * @return: retorna el nombre de la pizarra
      */

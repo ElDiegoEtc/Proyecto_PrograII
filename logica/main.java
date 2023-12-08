@@ -48,8 +48,10 @@ public class main implements Serializable {
         }*/
 
         Pizarra pizarra = new Pizarra(new ArrayList<>(), new ArrayList<>());
-        CommandConfiguracion.CommandConfiguracion(pizarra);
+        pizarra.setNombre("Hola"); 
+        CommandConfiguracion.CommandConfiguracion(pizarra); //Necesario
         pizarra.clickBoton1(); //Guarda el archivo
+        pizarra.clickBoton2(); //Carga el archivo
     }
 
 
