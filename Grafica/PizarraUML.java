@@ -97,17 +97,5 @@ public class PizarraUML extends JPanel {
         add(tipoFlechaComboBox, BorderLayout.WEST);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                JFrame frame = new JFrame("Editor de Diagrama UML");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.getContentPane().add(new PizarraUML());
-                frame.pack();
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-            }
-        });
-    }
+   
 }
