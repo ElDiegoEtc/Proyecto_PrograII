@@ -14,6 +14,9 @@ public class PizarraUML extends JFrame {
     private Pizarra pizarraL;
     private PizarraPanel pizarraPanel;
     private JComboBox<Flecha> tipoFlechaComboBox;
+    private JLabel nombrePizarraLabel;
+    private boolean primeraVez = true;
+
 
     public PizarraUML() {
         pizarraL = new Pizarra(new ArrayList<>(), new ArrayList<>());
@@ -22,6 +25,7 @@ public class PizarraUML extends JFrame {
 
         Componentesinicial();
     }
+
 
     private void Componentesinicial() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,6 +38,12 @@ public class PizarraUML extends JFrame {
         pizarraPanel = new PizarraPanel(pizarraL);
         getContentPane().add(pizarraPanel, BorderLayout.CENTER);
         /**
+         *Crear la etiqueta para mostrar el nombre de la pizarra
+         */
+        nombrePizarraLabel = new JLabel("Nombre de la Pizarra: " + pizarraL.getNombre());
+        getContentPane().add(nombrePizarraLabel, BorderLayout.NORTH);
+
+        /**
          *Crear el panel de botones y agregarlo al JFrame
          */
 
@@ -41,6 +51,12 @@ public class PizarraUML extends JFrame {
         JButton guardarButton = new JButton("Guardar Pizarra");
         JButton cargarButton = new JButton("Cargar Pizarra");
         JButton BotonBorrarTodo = new JButton("Borrar todo");
+        /**
+         * Crear la etiqueta para mostrar el nombre de la pizarra
+         */
+        nombrePizarraLabel = new JLabel("Nombre de la Pizarra: " + pizarraL.getNombre());
+        getContentPane().add(nombrePizarraLabel, BorderLayout.NORTH);
+
 
         /**
          * Configurar los ActionListener para el botón de guardar
@@ -50,12 +66,27 @@ public class PizarraUML extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /**
-                 * Llama al método clickBoton1 en la lógica de la pizarra
+                 * para mostar el cuadro una vez
                  */
+                if (primeraVez) {
+                    String nuevoNombre = JOptionPane.showInputDialog("Ingrese el nuevo nombre de la pizarra:");
+
+                    if (nuevoNombre != null && !nuevoNombre.isEmpty()) {
+                        pizarraL.setNombre(nuevoNombre);
+                        /**
+                         * Cambiar el estado a false para no mostrar el cuadro de diálogo en futuros  clicks
+                         */
+                        primeraVez = false;
+                    }
+                }
+                nombrePizarraLabel.setText(pizarraL.getNombre());
+
+
                 pizarraL.clickBoton1();
                 /**
-                 * Actualiza la interfaz grafica
+                 * actualiza la interfaz
                  */
+
                 pizarraPanel.repaint();
             }
         });
