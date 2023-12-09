@@ -12,6 +12,12 @@ import java.util.ArrayList;
 import logica.*;
 
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 public class PizarraUML extends JPanel {
     private Pizarra pizarraL;
     private PizarraPanel pizarraPanel;
@@ -19,18 +25,14 @@ public class PizarraUML extends JPanel {
     private JLabel nombrePizarraLabel;
     private boolean primeraVez = true;
 
-    /**
-     * constructor de la clase PizarraUML
-     */
     public PizarraUML() {
         pizarraL = new Pizarra(new ArrayList<>(), new ArrayList<>());
         pizarraL.setNombre("Hola");
         CommandConfiguracion.CommandConfiguracion(pizarraL);
-
-        inicializarComponentes();
+        ComponentesInicial();
     }
 
-    private void inicializarComponentes() {
+    private void ComponentesInicial() {
         setLayout(new BorderLayout());
 
         pizarraPanel = new PizarraPanel(pizarraL);
@@ -95,6 +97,17 @@ public class PizarraUML extends JPanel {
         add(tipoFlechaComboBox, BorderLayout.WEST);
     }
 
-
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                JFrame frame = new JFrame("Editor de Diagrama UML");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.getContentPane().add(new PizarraUML());
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
     }
-
+}
