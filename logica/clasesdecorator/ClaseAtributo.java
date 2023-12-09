@@ -2,17 +2,28 @@ package logica.clasesdecorator;
 
 import java.io.Serializable;
 
+/**
+ * Clase concreta que extiende a Decorador y representa un atributo de una clase en la pizarra UML.
+ */
 public class ClaseAtributo extends Decorador implements Serializable {
 
     private String atributo;
+
+    /**
+     * Constructor que inicializa la clase atributo.
+     *
+     * @param clase Clase base a decorar.
+     * @param atributo Atributo a agregar a la clase.
+     */
     public ClaseAtributo(Clase clase, String atributo){
         super(clase);
         this.atributo = atributo;
     }
 
     /**
+     * {@inheritDoc}
      *
-     * @return
+     * @return Un array de cadenas que con el módulo de la clase con el atributo.
      */
     @Override
     public String[] modulo(){
