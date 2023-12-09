@@ -20,7 +20,6 @@ public class PizarraUML extends JFrame {
 
     public PizarraUML() {
         pizarraL = new Pizarra(new ArrayList<>(), new ArrayList<>());
-        pizarraL.setNombre("Hola");
         CommandConfiguracion.CommandConfiguracion(pizarraL); //es necesario llamar a esto para que funcione los botones
 
         Componentesinicial();
