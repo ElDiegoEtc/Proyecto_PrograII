@@ -14,8 +14,8 @@ public class GestorPestañas extends JFrame {
 
         tabbedPane = new JTabbedPane();
         getContentPane().add(tabbedPane, BorderLayout.CENTER);
-
-        JButton addButton = new JButton("+ Nueva Pestaña");
+        setPreferredSize(new Dimension(850, 630));
+        JButton addButton = new JButton("+ Nueva Pizarra");
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
