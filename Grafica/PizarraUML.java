@@ -18,9 +18,11 @@ public class PizarraUML extends JFrame {
     public PizarraUML() {
         pizarraL = new Pizarra(new ArrayList<>(), new ArrayList<>());
         pizarraL.setNombre("Hola");
+        CommandConfiguracion.CommandConfiguracion(pizarraL); //es necesario llamar a esto para que funcione los botones
 
         Componentesinicial();
     }
+
     private void Componentesinicial() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Editor de Diagrama UML");
@@ -129,13 +131,5 @@ public class PizarraUML extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                PizarraUML editorUML = new PizarraUML();
-                editorUML.setVisible(true);
-            }
-        });
-    }
+
 }
