@@ -1,11 +1,21 @@
 package logica;
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import Grafica.PizarraUML;
 import logica.command.CommandConfiguracion;
 import logica.command.CommandGuardarArchivoPizarra;
 
+import javax.swing.*;
+
 public class main implements Serializable {
     public static void main(String[] args) {
+        JFrame frame = new JFrame("Pizarra");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        PizarraUML p = new PizarraUML();
+        frame.add(p);
+        frame.setSize(550, 600);
+        frame.setVisible(true);
         /*ArrayList<Conector> arrows = new ArrayList<>();
         List<Conector> arrows = new ArrayList<>();
 
@@ -47,11 +57,6 @@ public class main implements Serializable {
             conector.draw();
         }*/
 
-        Pizarra pizarra = new Pizarra(new ArrayList<>(), new ArrayList<>());
-        pizarra.setNombre("Hola");
-        CommandConfiguracion.CommandConfiguracion(pizarra); //Necesario
-        pizarra.clickBoton1(); //Guarda el archivo
-        pizarra.clickBoton2(); //Carga el archivo
     }
 
 
