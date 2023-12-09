@@ -89,5 +89,5 @@ public class PizarraUML extends JPanel {
         add(tipoFlechaComboBox, BorderLayout.WEST);
     }
 
-   
+
 }
