@@ -1,5 +1,7 @@
 package Grafica.antes;
 
+import logica.Pizarra;
+
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -23,7 +25,7 @@ public class ArrastreElementos extends JFrame {
         // Crear un elemento arrastrable (en este caso, un JLabel)
         elementoArrastrable = new JLabel("Arrastra este texto");
         elementoArrastrable.setBounds(50, 50, 150, 30);
-
+        pizarra.add(elementoArrastrable);
         /**Registra la posicion de donde estaba el objeto original, luego cuando el objeto es soltado se
          * guarda su posicion final y se devuelve a su posicion inicial
          */
@@ -40,13 +42,7 @@ public class ArrastreElementos extends JFrame {
                 finalX = elementoArrastrable.getX();
                 finalY = elementoArrastrable.getY();
                 System.out.println("Coordenadas finales: (" + finalX + ", " + finalY + ")");//borrar linea luego
-                if (elementoArrastrable instanceof JLabel) {
-                    DibujoLinea3 dibujo = new DibujoLinea3();
-                    dibujo.establecerPuntoInicial(finalX, finalY);
-                    dibujo.establecerPuntoFinal();
-                    repaint();
 
-                }
                 elementoArrastrable.setLocation(OriginalX,OriginalY);
             }
         });
@@ -71,6 +67,7 @@ public class ArrastreElementos extends JFrame {
         SwingUtilities.invokeLater(() -> {
             ArrastreElementos ventana = new ArrastreElementos();
             ventana.setVisible(true);
+
         });
     }
 }
