@@ -1,4 +1,4 @@
-package Grafica.antes;
+package Grafica;
 
 import logica.Pizarra;
 
