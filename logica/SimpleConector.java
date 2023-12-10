@@ -131,4 +131,23 @@ public class SimpleConector implements Conector, Serializable {
         return tipoPunta;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Flecha getArrowType() {
+        return arrowType;
+    }
+
+    public int getX_j() {
+        return x_j;
+    }
+
+    public int getY_j() {
+        return y_j;
+    }
 }
