@@ -122,4 +122,13 @@ public class SimpleConector implements Conector, Serializable {
     public boolean isSerialNumber() {
         return serialNumber;
     }
+
+    public boolean isRelleno() {
+        return Relleno;
+    }
+
+    public boolean isTipoPunta() {
+        return tipoPunta;
+    }
+
 }
