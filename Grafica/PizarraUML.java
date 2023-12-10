@@ -9,7 +9,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import logica.*;
-
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import logica.command.CommandCargarArchivoPizarra;
+import java.io.ObjectInputStream;
 public class PizarraUML extends JPanel {
     private Pizarra pizarraL;
     private PizarraPanel pizarraPanel;
@@ -58,8 +64,65 @@ public class PizarraUML extends JPanel {
         cargarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pizarraL.clickBoton2();
-                pizarraPanel.repaint();
+                /**
+                 * creamos un cuadro para seleccionar el archivo
+                 */
+                JFileChooser fileChooser = new JFileChooser();
+                /**
+                 *  Esto muestra el cuadro de diálogo para que el usuario elija y obtener su opcion
+                 */
+                int result = fileChooser.showOpenDialog(PizarraUML.this);
+
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    /**
+                     * obtenemos el aarchivo seleccionado por el usuario
+                     */
+                    File selectedFile = fileChooser.getSelectedFile();
+                    /**
+                     * creamos instanciaa de pizrra
+                     * y comaando para caargar archivo de pizarra
+                     */
+
+                    ArchivoPizarra archivoPizarra = new ArchivoPizarra();
+                    CommandCargarArchivoPizarra commandCargarArchivo = new CommandCargarArchivoPizarra(archivoPizarra, pizarraL);
+/**
+ * creamos la exception
+ */
+                    try {
+                        /**
+                         * abre y lee los archivos seleccionados
+                         */
+                        FileInputStream fileInputStream = new FileInputStream(selectedFile);
+                        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+                        /**
+                         * Ejecutar el comando para cargar la pizarra desde el archivo
+                         */
+                        commandCargarArchivo.execute();
+                        /**
+                         * cierra flujos de entrada
+                         */
+
+                        objectInputStream.close();
+                        fileInputStream.close();
+                    }catch (IOException ex) {
+                        /**
+                         * maneja errores cuando el archivo no se puede leer
+                         */
+                        ex.printStackTrace();
+                        System.err.println("Error de IO al cargar la pizarra desde el archivo: " + ex.getMessage());
+                    }
+                    /**
+                     * actualiza interfaz grafica luego de guardar pizarra
+                     */
+
+                    nombrePizarraLabel.setText(pizarraL.getNombre());
+                    pizarraPanel.repaint();
+                } else {
+                    /**
+                     * no hace nada si el usuario cancela la ejecucion
+                     */
+                }
             }
         });
 
