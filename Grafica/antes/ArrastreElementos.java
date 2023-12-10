@@ -1,7 +1,6 @@
-package Grafica;
+package Grafica.antes;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -12,8 +11,7 @@ public class ArrastreElementos extends JFrame {
     private JPanel pizarra;
     private JLabel elementoArrastrable;
 
-    private int offsetX, offsetY;
-
+    private int offsetX, offsetY, finalX, finalY, OriginalX, OriginalY;
     public ArrastreElementos() {
         setTitle("Arrastre de Elementos");
         setSize(400, 400);
@@ -25,13 +23,35 @@ public class ArrastreElementos extends JFrame {
         // Crear un elemento arrastrable (en este caso, un JLabel)
         elementoArrastrable = new JLabel("Arrastra este texto");
         elementoArrastrable.setBounds(50, 50, 150, 30);
+
+        /**Registra la posicion de donde estaba el objeto original, luego cuando el objeto es soltado se
+         * guarda su posicion final y se devuelve a su posicion inicial
+         */
         elementoArrastrable.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 offsetX = e.getX();
                 offsetY = e.getY();
+                OriginalX = e.getX();
+                OriginalY = e.getY();
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                finalX = elementoArrastrable.getX();
+                finalY = elementoArrastrable.getY();
+                System.out.println("Coordenadas finales: (" + finalX + ", " + finalY + ")");//borrar linea luego
+                if (elementoArrastrable instanceof JLabel) {
+                    DibujoLinea3 dibujo = new DibujoLinea3();
+                    dibujo.establecerPuntoInicial(finalX, finalY);
+                    dibujo.establecerPuntoFinal();
+                    repaint();
+
+                }
+                elementoArrastrable.setLocation(OriginalX,OriginalY);
             }
         });
+        /**Se ocupa para mostrar el arrastre del elemento a tiempo real
+         */
         elementoArrastrable.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
