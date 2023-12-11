@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Pizarra implements Serializable {
-    private Command boton1, boton2, boton3, boton4, boton5;
+    private Command boton1, boton2, boton3, boton4, boton5, boton6;
     private ArrayList<Conector> conectores;
     private ArrayList<Clase> clases;
     private String nombre;
@@ -34,6 +34,12 @@ public class Pizarra implements Serializable {
      */
     public void addConector(Conector conector) {
         conectores.add(conector);
+    }
+    /** Funcion para añadir objetos clases a la pizarra
+     * @param clase: Objeto que representa clases en pizarra UML
+     */
+    public void addClase(Clase clase) {
+        clases.add(clase);
     }
 
     /**
@@ -69,32 +75,37 @@ public class Pizarra implements Serializable {
         boton2.execute();
     }
 
-    public void clickBoton3() {
-        boton3.execute();
-    }
-
-    public void clickBoton4() {
-        boton4.execute();
-    }
+    /**Ejecuta el boton5 (command pattern), borra tod0s los elementos de la pizarra
+     */
     public void clickBoton5() {
         boton5.execute();
     }
 
 
+    /**Botones que añaden objetos ¨clase¨ para la pizarra UML
+     *
+     */
+    public void clickBoton4() {
+        boton4.execute();
+    }
+    public void clickBoton3() {
+        boton3.execute();
+    }
+    public void clickBoton6() {
+        boton6.execute();
+    }
 
 
-
-
-    //Boton 1: GUARDA PIZARRA
+    /**Getters y setters de botones (los setters se conectan con el command pattern)
+     *
+     * @return: La accion de cada boton
+     */
     public Command getBoton1() {
         return boton1;
     }
-
     public void setBoton1(Command boton1) {
         this.boton1 = boton1;
     }
-
-
     public Command getBoton2() {
         return boton2;
     }
@@ -118,6 +129,12 @@ public class Pizarra implements Serializable {
     }
     public void setBoton5(Command boton5) {
         this.boton5 = boton5;
+    }
+    public Command getBoton6() {
+        return boton6;
+    }
+    public void setBoton6(Command boton6) {
+        this.boton6 = boton6;
     }
 
 

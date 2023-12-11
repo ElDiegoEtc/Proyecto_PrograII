@@ -1,11 +1,26 @@
 package logica;
 
+import logica.clasesdecorator.Clase;
+import logica.clasesdecorator.ClaseAtributo;
+import logica.clasesdecorator.ClaseMetodo;
+import logica.clasesdecorator.ComponenteBase;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ElementosPizarra implements Serializable {
-    public void AddElement(){
-
+    public void AddClaseAtrbuto(Pizarra p){
+        Clase componenteBase = new ComponenteBase("<Titulo>");
+        p.addClase(new ClaseAtributo(componenteBase, "<Atributos>"));
+    }
+    public void AddClaseMetodo(Pizarra p){
+        Clase componenteBase = new ComponenteBase("<Titulo>");
+        p.addClase(new ClaseMetodo(componenteBase, "<Metodos>"));
+    }
+    public void AddClaseCompleta(Pizarra p){
+        Clase componenteBase = new ComponenteBase("<Titulo>");
+        Clase claseAtributo = new ClaseAtributo(componenteBase, "<Atrivuto>");
+        p.addClase(new ClaseMetodo(claseAtributo, "<Metodos>"));
     }
     public void DeleteElement(){
 

@@ -12,10 +12,15 @@ public class CommandConfiguracion implements Serializable {
 
         p.setBoton1(new CommandGuardarArchivoPizarra(ar, p));
         p.setBoton2(new CommandCargarArchivoPizarra(ar, p));
-
-        p.setBoton3(new CommandAddElementElementosPizarra(ep));
-        p.setBoton4(new CommandDeleteElementElementosPizarra(ep));
         p.setBoton5(new CommandDeleteAllElementosPizarra(ep, p));
+        /**Botones para crear clases con titulo y campos extras:
+         * Boton3: Añade una clase con solo un atributo
+         * Boton4: Añade una clase con solo Metodos
+         * Boton6: Añade una clase con Atrbuto y metodos
+         */
+        p.setBoton3(new CommandAddClaseAtributoPizarra(ep,p));
+        p.setBoton4(new CommandAddClaseMetodoPizarra(ep,p));
+        p.setBoton6(new CommandAddClaseCompletaPizarra(ep,p));
 
     }
 }
