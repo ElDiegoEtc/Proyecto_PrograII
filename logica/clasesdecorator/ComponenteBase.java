@@ -8,8 +8,8 @@ import java.io.Serializable;
 public class ComponenteBase implements Clase, Serializable {
 
     private String titulo;
-    private int coordX;
-    private int coordY;
+    private int coordX, coordY;
+
 
     /**
      * Constructor que inicializa el componente base con un título.

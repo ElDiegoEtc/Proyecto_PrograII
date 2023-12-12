@@ -17,7 +17,7 @@ public class CommandAddClaseMetodoPizarra implements Command, Serializable {
 
     @Override
     public void execute() {
-        ep.AddClaseAtrbuto(p);
+        ep.AddClaseMetodo(p);
     }
 
 }

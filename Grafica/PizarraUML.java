@@ -1,6 +1,7 @@
 package Grafica;
 
 import logica.Pizarra;
+import logica.clasesdecorator.Clase;
 import logica.command.CommandConfiguracion;
 
 import javax.swing.*;
@@ -15,10 +16,10 @@ public class PizarraUML extends JPanel {
     private JComboBox<Flecha> tipoFlechaComboBox;
     private JLabel nombrePizarraLabel;
     private boolean primeraVez = true;
+    private int numeroClases;
 
     public PizarraUML() {
         pizarraL = new Pizarra(new ArrayList<>(), new ArrayList<>());
-        pizarraL.setNombre("Hola");
         CommandConfiguracion.CommandConfiguracion(pizarraL);
         ComponentesInicial();
     }
@@ -33,10 +34,13 @@ public class PizarraUML extends JPanel {
         add(nombrePizarraLabel, BorderLayout.NORTH);
 
         JPanel botonesPanel = new JPanel();
+        JPanel clasesPanel = new JPanel();
+        clasesPanel.setLayout(new BoxLayout(clasesPanel, BoxLayout.Y_AXIS));
+
         JButton guardarButton = new JButton("Guardar Pizarra");
         JButton cargarButton = new JButton("Cargar Pizarra");
         JButton botonBorrarTodo = new JButton("Borrar todo");
-
+        JButton anadirClase = new JButton("Clase Completa");
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,6 +69,24 @@ public class PizarraUML extends JPanel {
             }
         });
 
+        /**
+         * Escucha si se presiona el boton, si lo hace, entonces crea una nueva clase, se le asigna su vista
+         * y deja arrastrarlo visualmente
+         */
+        anadirClase.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pizarraL.clickBoton6(); //crea un objeto en un arraylist
+                numeroClases = pizarraL.getArrayclases().size();
+                Clase actual = pizarraL.getArrayclases().get(numeroClases -1);
+                ClaseCompletaVista cv = new ClaseCompletaVista();
+                //cv.paint(g, actual);
+
+                pizarraPanel.repaint();
+            }
+        });
+
+
         botonBorrarTodo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -77,9 +99,14 @@ public class PizarraUML extends JPanel {
         botonesPanel.add(guardarButton);
         botonesPanel.add(cargarButton);
         botonesPanel.add(botonBorrarTodo);
-
         add(botonesPanel, BorderLayout.SOUTH);
 
+        clasesPanel.add(anadirClase);
+        add(clasesPanel, BorderLayout.WEST);
+
+        /**Se hace un Jcombobox para seleccionar que conector dibujar, tomando de base
+         * las caracteristicas de las flechas definidas en la logica
+         */
         tipoFlechaComboBox = new JComboBox<>(Flecha.values());
         tipoFlechaComboBox.addActionListener(new ActionListener() {
             @Override
@@ -88,9 +115,8 @@ public class PizarraUML extends JPanel {
                 // Acciones según la selección
             }
         });
+        clasesPanel.add(tipoFlechaComboBox);
+        add(clasesPanel, BorderLayout.WEST);
 
-        add(tipoFlechaComboBox, BorderLayout.WEST);
     }
-
-
 }

@@ -22,6 +22,7 @@ public class Pizarra implements Serializable {
         return nombre;
     }
 
+
     /**
      * @param nombre: Almacena un string que correspondera al nombre de la pizarra
      */
@@ -35,6 +36,7 @@ public class Pizarra implements Serializable {
     public void addConector(Conector conector) {
         conectores.add(conector);
     }
+
     /** Funcion para añadir objetos clases a la pizarra
      * @param clase: Objeto que representa clases en pizarra UML
      */
@@ -42,8 +44,8 @@ public class Pizarra implements Serializable {
         clases.add(clase);
     }
 
-    /**
-     * @return retorna todos los objetos "conectores" que estan en la pizarra UML
+
+    /** @return retorna todos los objetos "conectores" que estan en la pizarra UML
      */
     public ArrayList<Conector> getArrayconectores() {
         return conectores;
@@ -83,7 +85,9 @@ public class Pizarra implements Serializable {
 
 
     /**Botones que añaden objetos ¨clase¨ para la pizarra UML
-     *
+     *boton3: clase atributo con titulo y atributo
+     *boton4: clase metodo con titulo y metodo
+     * boton6: clase completa con titulo, atributo y metodo
      */
     public void clickBoton4() {
         boton4.execute();
@@ -96,7 +100,8 @@ public class Pizarra implements Serializable {
     }
 
 
-    /**Getters y setters de botones (los setters se conectan con el command pattern)
+    /**Getters y setters de botones (los setters se conectan con el command pattern), los set
+     * se usan para implementar la funcionalidad de los botones (command pattern)
      *
      * @return: La accion de cada boton
      */
