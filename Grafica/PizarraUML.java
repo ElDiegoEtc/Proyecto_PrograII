@@ -40,7 +40,14 @@ public class PizarraUML extends JPanel {
         JButton guardarButton = new JButton("Guardar Pizarra");
         JButton cargarButton = new JButton("Cargar Pizarra");
         JButton botonBorrarTodo = new JButton("Borrar todo");
-        JButton anadirClase = new JButton("Clase Completa");
+        JButton anadirClaseC = new JButton("Crear clase Completa");
+        JButton anadirClaseA = new JButton("Crear clase con titulo y atributos");
+        JButton anadirClaseM = new JButton("Crear clase con titulo y metodos");
+
+
+        /**
+         * Guarda la pizarra con cierto nombre
+         */
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,7 +64,9 @@ public class PizarraUML extends JPanel {
                 pizarraPanel.repaint();
             }
         });
-
+        /**
+         * Utiliza el boton 2 para cargar la pizarra con cierto nombre
+         */
         cargarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,10 +82,27 @@ public class PizarraUML extends JPanel {
          * Escucha si se presiona el boton, si lo hace, entonces crea una nueva clase, se le asigna su vista
          * y deja arrastrarlo visualmente
          */
-        anadirClase.addActionListener(new ActionListener() {
+        anadirClaseC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pizarraL.clickBoton6(); //crea un objeto en un arraylist
+                pizarraL.clickBoton6(); //crea una clase completa y lo guarda en la pizarra
+                numeroClases = pizarraL.getArrayclases().size();
+                Clase actual = pizarraL.getArrayclases().get(numeroClases -1);
+                ClaseCompletaVista cv = new ClaseCompletaVista();
+                //cv.paint(g, actual);
+
+                pizarraPanel.repaint();
+            }
+        }); //Se debe implementar esto para las otras vistas de clases
+
+        /**
+         * Escucha si se presiona el boton, si lo hace, entonces crea una nueva clase, se le asigna su vista
+         * y deja arrastrarlo visualmente
+         */
+        anadirClaseC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pizarraL.clickBoton6(); //crea una clase completa y lo guarda en la pizarra
                 numeroClases = pizarraL.getArrayclases().size();
                 Clase actual = pizarraL.getArrayclases().get(numeroClases -1);
                 ClaseCompletaVista cv = new ClaseCompletaVista();
@@ -101,7 +127,9 @@ public class PizarraUML extends JPanel {
         botonesPanel.add(botonBorrarTodo);
         add(botonesPanel, BorderLayout.SOUTH);
 
-        clasesPanel.add(anadirClase);
+        clasesPanel.add(anadirClaseC);
+        clasesPanel.add(anadirClaseM);
+        clasesPanel.add(anadirClaseA);
         add(clasesPanel, BorderLayout.WEST);
 
         /**Se hace un Jcombobox para seleccionar que conector dibujar, tomando de base
@@ -112,7 +140,7 @@ public class PizarraUML extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Flecha selectedFlecha = (Flecha) tipoFlechaComboBox.getSelectedItem();
-                // Acciones según la selección
+                // logica flechas
             }
         });
         clasesPanel.add(tipoFlechaComboBox);
